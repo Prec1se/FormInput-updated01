@@ -10,8 +10,6 @@ class AcademicYearSelection extends StatefulWidget {
 
 class _AcademicYearSelectionState extends State<AcademicYearSelection> {
   int _selectedFrequency3 = 0;
-  int _selectedFrequency1 = 0;
-  int _selectedFrequency2 = 0;
 
   @override
   Widget build(BuildContext context) {
