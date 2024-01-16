@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'SocialMediaUsage.dart';
+import '../Widget/SelectAcademicYear.dart';
 
 class PersonalInformation extends StatefulWidget {
   @override
@@ -9,7 +10,6 @@ class PersonalInformation extends StatefulWidget {
 
 class _PersonalInformationState extends State<PersonalInformation> {
   String _selectedGender = '';
-  String _acYear = '';
   TextEditingController _universityController = TextEditingController();
   TextEditingController _ageController = TextEditingController();
 
@@ -131,65 +131,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Select your Academic Year:',
-                        style: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(height: 16.0),
-                      RadioListTile(
-                        title: Text('1st'),
-                        value: '1st',
-                        groupValue: _acYear,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedGender = value.toString();
-                          });
-                        },
-                      ),
-                      RadioListTile(
-                        title: Text('2nd'),
-                        value: '2nd',
-                        groupValue: _acYear,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedGender = value.toString();
-                          });
-                        },
-                      ),
-                      RadioListTile(
-                        title: Text('3rd'),
-                        value: '3rd',
-                        groupValue: _acYear,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedGender = value.toString();
-                          });
-                        },
-                      ),
-                      RadioListTile(
-                        title: Text('4th'),
-                        value: '4th',
-                        groupValue: _acYear,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedGender = value.toString();
-                          });
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            AcademicYearSelection(),
             SizedBox(height: 16.0),
             Center(
               child: ElevatedButton(
